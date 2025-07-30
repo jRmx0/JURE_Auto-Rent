@@ -17,7 +17,6 @@ table 62707 "JURE Auto Rent Line"
             Caption = 'Line No.';
             ToolTip = 'Specifies the line number of the auto rent line. This field is filled automatically.';
             Editable = false;
-            AutoIncrement = true;
         }
         field(3; Type; Enum "JURE Auto Rent Line Type")
         {
@@ -92,6 +91,12 @@ table 62707 "JURE Auto Rent Line"
         }
     }
 
+    trigger OnInsert()
+    var
+    begin
+        this.AssignLineNo();
+    end;
+
     trigger OnModify()
     var
         LineErr: Label 'This line cannot be modified.';
@@ -108,10 +113,11 @@ table 62707 "JURE Auto Rent Line"
             Error(LineErr);
     end;
 
-    trigger OnInsert()
+
+
+    local procedure AssignLineNo()
     var
         AutoRentLine: Record "JURE Auto Rent Line";
-
     begin
         if "Line No." = 0 then begin
             AutoRentLine.SetRange("Auto Rent Contract Header No.", "Auto Rent Contract Header No.");

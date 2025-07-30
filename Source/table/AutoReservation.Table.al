@@ -63,25 +63,14 @@ table 62704 "JURE Auto Reservation"
     local procedure AssignLineNo()
     var
         AutoReservation: Record "JURE Auto Reservation";
-        MaxLineNo: Integer;
-        LineNoIncrement: Integer;
     begin
-        LineNoIncrement := 10000;
-
-        AutoReservation.SetRange("Auto No.", "Auto No.");
-        if AutoReservation.FindLast() then
-            MaxLineNo := AutoReservation."Line No."
-        else
-            MaxLineNo := 0;
-
-        "Line No." := MaxLineNo + LineNoIncrement;
-
-        AutoReservation.ReadIsolation(IsolationLevel::ReadUncommitted);
-        AutoReservation.SetLoadFields("Auto No.", "Line No.");
-        AutoReservation.SetRange("Auto No.", "Auto No.");
-
-        while AutoReservation.Get("Line No.") do
-            "Line No." += LineNoIncrement;
+        if "Line No." = 0 then begin
+            AutoReservation.SetRange("Auto No.", "Auto No.");
+            if AutoReservation.FindLast() then
+                "Line No." := AutoReservation."Line No." + 1
+            else
+                "Line No." := 1;
+        end;
     end;
 
     local procedure CheckReservationDates()

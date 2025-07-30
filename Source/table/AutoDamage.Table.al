@@ -45,6 +45,7 @@ table 62705 "JURE Auto Damage"
     }
 
     trigger OnInsert()
+    var
     begin
         this.AssignLineNo();
     end;
@@ -52,24 +53,13 @@ table 62705 "JURE Auto Damage"
     local procedure AssignLineNo()
     var
         AutoDamage: Record "JURE Auto Damage";
-        MaxLineNo: Integer;
-        LineNoIncrement: Integer;
     begin
-        LineNoIncrement := 10000;
-
-        AutoDamage.SetRange("Auto No.", "Auto No.");
-        if AutoDamage.FindLast() then
-            MaxLineNo := AutoDamage."Line No."
-        else
-            MaxLineNo := 0;
-
-        "Line No." := MaxLineNo + LineNoIncrement;
-
-        AutoDamage.ReadIsolation(IsolationLevel::ReadUncommitted);
-        AutoDamage.SetLoadFields("Auto No.", "Line No.");
-        AutoDamage.SetRange("Auto No.", "Auto No.");
-
-        while AutoDamage.Get("Line No.") do
-            "Line No." += LineNoIncrement;
+        if "Line No." = 0 then begin
+            AutoDamage.SetRange("Auto No.", "Auto No.");
+            if AutoDamage.FindLast() then
+                "Line No." := AutoDamage."Line No." + 1
+            else
+                "Line No." := 1;
+        end;
     end;
 }
