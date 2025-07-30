@@ -45,11 +45,6 @@ table 62706 "JURE Auto Rent Header"
             Caption = 'Auto No.';
             ToolTip = 'Specifies the number of the auto being rented.';
             TableRelation = "JURE Auto"."No.";
-
-            trigger OnValidate()
-            begin
-                this.OnAfterAutoSelection("No.", "Auto No.");
-            end;
         }
         field(6; "Reserved From"; Date)
         {
@@ -126,6 +121,8 @@ table 62706 "JURE Auto Rent Header"
     trigger OnModify()
     begin
         this.IsOpen();
+
+        this.OnAfterReservationSelection(Rec, xRec);
     end;
 
     trigger OnRename()
@@ -205,7 +202,7 @@ table 62706 "JURE Auto Rent Header"
 
 
     [IntegrationEvent(false, false)]
-    procedure OnAfterAutoSelection(ContractNo: Code[20]; AutoNo: Code[20])
+    procedure OnAfterReservationSelection(AutoRentHeader: Record "JURE Auto Rent Header"; xAutoRentHeader: Record "JURE Auto Rent Header")
     begin
     end;
 }
