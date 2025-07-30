@@ -13,7 +13,7 @@ table 62705 "JURE Auto Damage"
             Tooltip = 'Specifies the number of the automobile being reserved.';
             TableRelation = "JURE Auto"."No.";
         }
-        field(2; "Line No."; Integer)
+        field(2; "Line No."; Integer) // TODO: Implementation with Interface
         {
             Caption = 'Line No.';
             Editable = false;
