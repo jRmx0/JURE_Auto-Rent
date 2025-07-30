@@ -18,7 +18,7 @@ codeunit 62701 "JURE Auto Contract"
         FinishedAutoRentHeader.Init();
         FinishedAutoRentHeader."No." := AutoRentHeader."No.";
         FinishedAutoRentHeader."Customer No." := AutoRentHeader."Customer No.";
-        FinishedAutoRentHeader."Driver's license picture" := AutoRentHeader."Driver's license picture";
+        FinishedAutoRentHeader."Driver's license picture" := AutoRentHeader."Driver's license picture"; // BUG: Does not save
         FinishedAutoRentHeader."Date" := AutoRentHeader."Date";
         FinishedAutoRentHeader."Auto No." := AutoRentHeader."Auto No.";
         FinishedAutoRentHeader."Reserved From" := AutoRentHeader."Reserved From";

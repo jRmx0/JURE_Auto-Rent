@@ -3,7 +3,6 @@ table 62709 "JURE Finished Auto Rent Header"
     Caption = 'Finished Auto Rent Header';
     DataClassification = CustomerContent;
     LookupPageId = "JURE Finished Auto Rent Cons";
-    // TODO DrillDownPageId =
 
     fields
     {

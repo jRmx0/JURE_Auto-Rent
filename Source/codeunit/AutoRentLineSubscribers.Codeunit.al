@@ -21,6 +21,9 @@ codeunit 62700 "JUREAuto Rent Line Subscribers"
             exit;
         end;
 
+        if (AutoRentHeader."Reserved From" = 0D) or (AutoRentHeader."Reserved To" = 0D) then
+            exit;
+
         if AutoRentLine.Get(AutoRentHeader."No.", 1) then
             AutoRentLine.Delete(false);
 
@@ -36,7 +39,10 @@ codeunit 62700 "JUREAuto Rent Line Subscribers"
         AutoRentLine."Line No." := 1;
         AutoRentLine.Type := AutoRentLineType::Resource;
         AutoRentLine."No." := Resource."No.";
+        AutoRentLine.Description := Resource.Name;
         AutoRentLine.Quantity := NumberOfDays;
+        AutoRentLine.Price := Resource."Unit Price";
+        AutoRentLine.Amount := AutoRentLine.Quantity * AutoRentLine.Price;
         AutoRentLine.Insert(true);
     end;
 }
