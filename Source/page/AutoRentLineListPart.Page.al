@@ -11,7 +11,7 @@ page 62713 "JURE Auto Rent Line ListPart"
         {
             repeater(General)
             {
-                field("Auto Rent Contract Header No."; Rec."Auto Rent Contract Header No.")
+                field("Auto Rent Header No."; Rec."Auto Rent Header No.")
                 {
                 }
                 field("Line No."; Rec."Line No.")

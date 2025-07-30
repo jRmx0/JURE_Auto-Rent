@@ -5,7 +5,7 @@ table 62707 "JURE Auto Rent Line"
 
     fields
     {
-        field(1; "Auto Rent Contract Header No."; Code[20])
+        field(1; "Auto Rent Header No."; Code[20])
         {
             Caption = 'Auto Rent Contract No.';
             ToolTip = 'Specifies the number of the auto rent header to which this line belongs.';
@@ -84,7 +84,7 @@ table 62707 "JURE Auto Rent Line"
     }
     keys
     {
-        key(PK; "Auto Rent Contract Header No.","Line No.")
+        key(PK; "Auto Rent Header No.","Line No.")
         {
             Clustered = true;
             SumIndexFields = Amount;
@@ -120,7 +120,7 @@ table 62707 "JURE Auto Rent Line"
         AutoRentLine: Record "JURE Auto Rent Line";
     begin
         if "Line No." = 0 then begin
-            AutoRentLine.SetRange("Auto Rent Contract Header No.", "Auto Rent Contract Header No.");
+            AutoRentLine.SetRange("Auto Rent Header No.", "Auto Rent Header No.");
             if AutoRentLine.FindLast() then
                 "Line No." := AutoRentLine."Line No." + 1
             else

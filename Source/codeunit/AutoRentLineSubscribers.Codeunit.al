@@ -24,7 +24,7 @@ codeunit 62700 "JUREAuto Rent Line Subscribers"
             Error(ResourceErr, Auto."Rental Service No.");
 
         AutoRentLine.Init();
-        AutoRentLine."Auto Rent Contract Header No." := ContractNo;
+        AutoRentLine."Auto Rent Header No." := ContractNo;
         AutoRentLine."Line No." := 1;
         AutoRentLine.Type := AutoRentLineType::Resource;
         AutoRentLine."No." := Resource."No.";

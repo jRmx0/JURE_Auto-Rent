@@ -77,7 +77,7 @@ table 62706 "JURE Auto Rent Header"
             ToolTip = 'Specifies the total amount for the rental.';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = sum("JURE Auto Rent Line"."Amount" where("Auto Rent Contract Header No." = field("No.")));
+            CalcFormula = sum("JURE Auto Rent Line"."Amount" where("Auto Rent Header No." = field("No.")));
         }
         field(9; Status; Enum "JURE Auto Rent Header Status")
         {

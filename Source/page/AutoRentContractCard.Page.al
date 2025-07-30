@@ -60,7 +60,7 @@ page 62710 "JURE Auto Rent Contract Card"
             {
                 Editable = Rec.Status = this.Status::Open;
                 Enabled = Rec.Status = this.Status::Open;
-                SubPageLink = "Auto Rent Contract Header No." = field("No.");
+                SubPageLink = "Auto Rent Header No." = field("No.");
                 UpdatePropagation = Both;
             }
         }
