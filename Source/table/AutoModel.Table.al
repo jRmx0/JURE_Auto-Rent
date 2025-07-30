@@ -20,7 +20,7 @@ table 62702 "JURE Auto Model"
             NotBlank = true;
             ToolTip = 'Specifies a model code for given automobile mark.';
         }
-        field(3; Description; Text[512])
+        field(3; Description; Text[100])
         {
             Caption = 'Description';
             Tooltip = 'Specifies the description of the specific automobile model.';

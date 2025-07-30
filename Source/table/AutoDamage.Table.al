@@ -24,7 +24,7 @@ table 62705 "JURE Auto Damage"
             Caption = 'Date';
             ToolTip = 'Specifies the date of the damage.';
         }
-        field(4; "Damage Description"; Text[1024])
+        field(4; "Description"; Text[100])
         {
             Caption = 'Damage Description';
             ToolTip = 'Specifies the description of the damage to the automobile.';

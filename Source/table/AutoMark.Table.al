@@ -14,7 +14,7 @@ table 62701 "JURE Auto Mark"
             NotBlank = true;
             ToolTip = 'Specifies a mark code for automobile.';
         }
-        field(2; Description; Text[512])
+        field(2; Description; Text[100])
         {
             Caption = 'Description';
             Tooltip = 'Specifies the description of the automobile mark.';

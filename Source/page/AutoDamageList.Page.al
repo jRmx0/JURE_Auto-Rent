@@ -22,7 +22,7 @@ page 62707 "JURE Auto Damage List"
                 field("Date"; Rec."Date")
                 {
                 }
-                field("Damage Description"; Rec."Damage Description")
+                field("Description"; Rec."Description")
                 {
                 }
                 field(Status; Rec.Status)
