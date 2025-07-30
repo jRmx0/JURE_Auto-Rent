@@ -47,5 +47,6 @@
 	"xliffSync.parseFromDeveloperNoteTrimCharacters": "\"",
 	"xliffSync.replaceTranslationsDuringImport": true,
 	"xliffSync.parseFromDeveloperNoteSeparator": ", #Comment",
-	"xliffSync.parseFromDeveloperNoteOverwrite": true
+	"xliffSync.parseFromDeveloperNoteOverwrite": true,
+	"todo-tree.tree.scanMode": "workspace only"
 }
