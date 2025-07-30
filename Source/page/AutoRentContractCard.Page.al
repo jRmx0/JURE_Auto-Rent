@@ -70,7 +70,7 @@ page 62710 "JURE Auto Rent Contract Card"
     {
         area(Processing)
         {
-            action("Return Auto") // TODO: Implementation
+            action("Return Auto")
             {
                 Caption = 'Return Auto';
                 Image = Return;
@@ -78,7 +78,7 @@ page 62710 "JURE Auto Rent Contract Card"
 
                 trigger OnAction()
                 begin
-                    Message('OK');
+                    this.OnAfterReturnAuto(Rec);
                 end;
             }
             action(Reopen)
@@ -127,4 +127,9 @@ page 62710 "JURE Auto Rent Contract Card"
 
     var
         Status: Enum "JURE Auto Rent Header Status";
+
+    [IntegrationEvent(false, false)]
+    procedure OnAfterReturnAuto(AutoRentHeader: Record "JURE Auto Rent Header")
+    begin
+    end;
 }
