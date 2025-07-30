@@ -4,6 +4,7 @@ page 62717 "JURE Finish Auto Rent Line LP"
     Caption = 'Lines';
     PageType = ListPart;
     SourceTable = "JURE Finished Auto Rent Line";
+    Editable = false;
 
     layout
     {

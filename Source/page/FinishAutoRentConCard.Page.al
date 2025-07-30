@@ -5,6 +5,7 @@ page 62715 "JURE Finish Auto Rent Con Card"
     PageType = Card;
     SourceTable = "JURE Finished Auto Rent Header";
     UsageCategory = None;
+    Editable = false;
 
     layout
     {

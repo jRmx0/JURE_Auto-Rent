@@ -5,6 +5,7 @@ page 62716 "JURE Finished Auto Rent Cons"
     PageType = List;
     SourceTable = "JURE Finished Auto Rent Header";
     UsageCategory = Lists;
+    Editable = false;
 
     layout
     {
