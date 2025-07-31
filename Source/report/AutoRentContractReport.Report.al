@@ -8,6 +8,7 @@ report 62700 "JURE Auto Rent Contract Report"
     {
         dataitem(Header; "JURE Auto Rent Header")
         {
+            RequestFilterFields = "No.";
             column(AutoNo; "Auto No.")
             {
             }
@@ -40,6 +41,7 @@ report 62700 "JURE Auto Rent Contract Report"
             dataitem(Line; "JURE Auto Rent Line")
             {
                 DataItemLink = "Auto Rent Header No." = field("No.");
+                DataItemTableView = where(Type = filter(Item | Resource));
                 column(Type; Type)
                 {
                 }

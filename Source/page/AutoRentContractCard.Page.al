@@ -106,6 +106,25 @@ page 62710 "JURE Auto Rent Contract Card"
                 end;
             }
         }
+        area(Reporting)
+        {
+            action("Print Contract")
+            {
+                Caption = 'Print Contract';
+                Image = Report;
+                ToolTip = 'Print the auto rental contract.';
+
+                trigger OnAction()
+                var
+                    AutoRentHeader: Record "JURE Auto Rent Header";
+                begin
+                    AutoRentHeader.Reset();
+                    AutoRentHeader.SetRange("No.", Rec."No.");
+
+                    Report.Run(Report::"JURE Auto Rent Contract Report", true, false, AutoRentHeader);
+                end;
+            }
+        }
         area(Promoted)
         {
             group(Category_Process)
@@ -119,6 +138,9 @@ page 62710 "JURE Auto Rent Contract Card"
                 {
                 }
                 actionref(ReleaseRef; Release)
+                {
+                }
+                actionref(PrintContractRef; "Print Contract")
                 {
                 }
             }
