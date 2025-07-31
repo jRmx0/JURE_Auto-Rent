@@ -71,5 +71,8 @@ table 62709 "JURE Finished Auto Rent Header"
         {
             Clustered = true;
         }
+        key(key2; "Reserved From")
+        {
+        }
     }
 }
