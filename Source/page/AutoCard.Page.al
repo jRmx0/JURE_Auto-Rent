@@ -62,7 +62,7 @@ page 62704 "JURE Auto Card"
     {
         area(Processing)
         {
-            action(ViewReservations)
+            action("View Reservations")
             {
                 Caption = 'View Reservation';
                 ToolTip = 'View reservations for this automobile.';
@@ -76,9 +76,31 @@ page 62704 "JURE Auto Card"
                 end;
             }
         }
+        area(Reporting)
+        {
+            action("Print History")
+            {
+                Caption = 'Print History';
+                Image = Report;
+                ToolTip = 'Print the auto rental history.';
+
+                trigger OnAction()
+                var
+                    Auto: Record "JURE Auto";
+                begin
+                    Auto.Reset();
+                    Auto.SetRange("No.", Rec."No.");
+
+                    Report.Run(Report::"JURE Auto Rent History", true, false, Auto);
+                end;
+            }
+        }
         area(Promoted)
         {
-            actionref(ViewReservationsRef; ViewReservations)
+            actionref(ViewReservationsRef; "View Reservations")
+            {
+            }
+            actionref(PrintHistoryRef; "Print History")
             {
             }
         }
