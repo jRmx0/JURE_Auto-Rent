@@ -19,7 +19,7 @@ report 62701 "JURE Auto Rent History"
             }
             dataitem(Contracts; "JURE Finished Auto Rent Header")
             {
-                RequestFilterFields = "Reserved From", "Reserved To"; // TODO: Inlcude everything in between
+                RequestFilterFields = "Reserved From", "Reserved To";
 
                 DataItemLink = "Auto No." = field("No.");
                 DataItemTableView = sorting("Reserved From");

@@ -3,7 +3,7 @@ table 62703 "JURE Auto"
     Caption = 'Auto';
     DataClassification = CustomerContent;
     DrillDownPageId = "JURE Autos List";
-    LookupPageId = "JURE Autos List"; // REVIEW: Page Ids
+    LookupPageId = "JURE Autos List";
 
     fields
     {
